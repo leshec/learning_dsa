@@ -15,7 +15,7 @@ def opposite_elements_product(numbers)
   end
 
   #loop to build new array out from the centre
-  while left >= 0 || right < numbers.length
+  while left >= 0 && right < numbers.length
   new_array << (numbers[left] * numbers[right])
   left -= 1
   right +=1
