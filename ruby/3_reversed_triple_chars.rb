@@ -8,10 +8,6 @@ def reversed_triple_chars(s)
   result
 end
 
-#
- puts "--- Running Manual Checks ---"
- puts reversed_triple_chars("abcdef")
-#
  def assert_equal(expected, actual)
    if expected == actual
      puts "PASS: Got '#{actual}'"
