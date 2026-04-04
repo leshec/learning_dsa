@@ -1,8 +1,14 @@
 # TODO: Split the string into words and rotate each word's characters once to the right.
+
 def rotate_words(s)
   word = s.split.map{ |word| word[-1] + word[0..-2] unless word.empty?}.compact.join(' ')
 end
 
+# def rotate_words(s)
+#   s.split.map do |word|
+#     word.chars.rotate(-1).join 
+#   end.join(' ')
+# end
 
 def assert_equal(expected, actual)
   if expected == actual
