@@ -7,6 +7,12 @@ def reverse_chars_and_sentence(s)
   answer.strip
 end
 
+def reverse_chars_and_sentence2(s)
+  s = (s.split.map { |item| item.reverse}).join(' ')
+  s
+end
+
+puts reverse_chars_and_sentence2("Hello neat rubyists_123")
 
 def assert_equal(expected, actual)
   if expected == actual
@@ -21,8 +27,15 @@ def test_1
   assert_equal "olleH taen 321_stsiybur", reverse_chars_and_sentence("Hello neat rubyists_123")
 end
 
+def test_2
+  assert_equal "olleH taen 321_stsiybur", reverse_chars_and_sentence2("Hello neat rubyists_123")
+end
+
+
 puts "---Running manual---"
 reverse_chars_and_sentence("Hello neat rubyists_123")
+reverse_chars_and_sentence2("Hello neat rubyists_123")
 
 puts "---Running tests---"
 test_1
+test_2
