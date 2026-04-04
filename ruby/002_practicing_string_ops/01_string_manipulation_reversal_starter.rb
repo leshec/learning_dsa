@@ -8,8 +8,8 @@ def reverse_chars_and_sentence1(s)
 end
 
 def reverse_chars_and_sentence2(s)
-  s = (s.split.map { |item| item.reverse}).join(' ')
-  s
+  (s.split.map { |item| item.reverse}).join(' ')
+  
 end
 
 def reverse_chars_and_sentence3(s)
