@@ -9,7 +9,6 @@ end
 
 def reverse_chars_and_sentence2(s)
   (s.split.map { |item| item.reverse}).join(' ')
-  
 end
 
 def reverse_chars_and_sentence3(s)
@@ -38,10 +37,10 @@ def test_3
   assert_equal "olleH taen 321_stsiybur", reverse_chars_and_sentence3("Hello neat rubyists_123")
 end
 
-puts "---Running manual---"
-puts reverse_chars_and_sentence1("Hello neat rubyists_123")
-puts reverse_chars_and_sentence2("Hello neat rubyists_123")
-puts reverse_chars_and_sentence3("Hello neat rubyists_123")
+# puts "---Running manual---"
+# puts reverse_chars_and_sentence1("Hello neat rubyists_123")
+# puts reverse_chars_and_sentence2("Hello neat rubyists_123")
+# puts reverse_chars_and_sentence3("Hello neat rubyists_123")
 
 puts "---Running tests---"
 test_1
