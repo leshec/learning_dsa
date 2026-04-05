@@ -1,7 +1,7 @@
 # TODO: Transform each word to start with a capital letter while making the rest lowercase.
 
 def capitalize_words(input_str)
-"Yo"
+  input_str.split.map{|word| word.downcase.capitalize}.join(' ')
 end
 
 def assert_equal(expected, actual)
