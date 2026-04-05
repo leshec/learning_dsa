@@ -1,3 +1,4 @@
+#Extract numbers and find their product
 def parse_and_multiply(s)
   num = ''
   numbers = []
