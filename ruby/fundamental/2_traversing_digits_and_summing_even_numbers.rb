@@ -34,16 +34,3 @@ puts count_consecutive_equal_digits2(13579)
 
 
 
-# Your task is to write a function that takes a positive integer n and returns the number of pairs of consecutive equal digits in the number. Consecutive equal digits are adjacent digits in n that are the same.
-#
-# For example:
-#
-#     If n = 113224, the consecutive equal digits are 11 and 22, so the output should be 2.
-#     If n = 444, the consecutive equal digits are 44 and 44 (the first and second, and the second and third), so the output should be 2.
-#     If n = 13579, there are no consecutive equal digits, so the output should be 0.
-#
-# Constraints:
-#
-#     The input n will always be a positive integer ranging from 11 to 108108, inclusive.
-#     You are not allowed to convert the number into a string or use other iterable structures to solve this task. The solution should be implemented using integer operations only.
-#

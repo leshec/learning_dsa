@@ -1,12 +1,3 @@
-#Similar to the last one
-#Although special chars and spaces 
-#are consecutively counted this time
-#Diff: not RL encoded, its left to right. It is right to left? 
-#Look up RLencoding, which way round is which?
-# Brief: Your method should return an array of arrays. 
-# Each inner array will consist of the repeating character and the number of its repetitions.
-# If the input string is "aaabbcccdde", the method should 
-# output: [["e", 1], ["d", 2], ["c", 3], ["b", 2], ["a", 3]].
 
 def consecutive_groups_reverse(s)
   groups = []

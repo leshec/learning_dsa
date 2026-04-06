@@ -68,16 +68,3 @@ end
  test_7
  test_8
 
- # In this task, you are provided with a string s containing only lowercase English letters. Your goal is to transform the string by reversing every group of three consecutive characters, while keeping the remaining characters (if fewer than three) unchanged. The transformed string should preserve the order of these reversed groups.
- # For example:
- # If s = "abcdef", the output should be "cbafed".
- # If s = "abcdefg", the output should be "cbafedg".
- # The string s will have a length between 1 and 300, inclusive.
- # Steps to Achieve the Task:
- # Divide the string into groups of three characters.
- # Reverse the characters within each group.
- # Concatenate all the groups back together, keeping the reversed order within each group.
- # If there are fewer than three characters in the final group, leave them unchanged.
-
-# Great work on passing the practice! 🚀 Your use of slice! is a very efficient way to consume the string.
-# Another common approach is to use a loop that jumps by 3 indices at a time (using .step(3)) to grab substrings without modifying the original string. You could also explore using Ruby's scan method with a regular expression to break the string into chunks of three!
