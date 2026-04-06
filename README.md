@@ -1,1 +1,1 @@
-## Playing with CodeSignal and DSA
+## Playing with code puzzles and DSA
