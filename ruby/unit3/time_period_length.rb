@@ -1,3 +1,7 @@
+# The number of times the clock passes an HH:MM:00 mark.
+# In test_3, the time moves from 00:59:59 to 01:00:00, 
+# which means it crosses the 01:00:00 mark, counting as 1 minute.u
+
 def get_seconds(time)
   time_parts = time.split(':').map(&:to_i)
   seconds_since_start = time_parts[0] * 3600 + time_parts[1] * 60 + time_parts[2]
