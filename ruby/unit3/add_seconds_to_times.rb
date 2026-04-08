@@ -25,7 +25,7 @@ def assert_equal(expected, actual)
   if expected == actual
     puts "Pass: #{actual}"
   else
-    puts "Pass: #{actual}, got #{expected}"
+    puts "Fail: #{actual}, got #{expected}"
   end
 end
 
