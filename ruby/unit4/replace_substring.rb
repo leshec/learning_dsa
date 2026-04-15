@@ -4,6 +4,24 @@ def replace_substring(text, old, new_str)
  text.gsub(old, new_str)
 end
 
+# alternative parse with indexing, building a new string
+def replace_substring(text, old, new_str)
+  # constraints say, will be string values assigned to params
+  # return text if old.empty? 
+  result = ""
+  i = 0
+  while i < text.length
+    if old == text[i, old.length] 
+      result << new_str        
+      i += old.length         
+    else
+      result << text[i]      
+      i += 1
+    end
+  end
+  
+  result
+end
 
 def assert_equal(expected, actual)
   if expected == actual
