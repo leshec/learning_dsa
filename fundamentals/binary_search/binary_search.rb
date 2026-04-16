@@ -15,6 +15,8 @@ def binary_search(list, target)
   nil
 end
 
+puts "-----"
+
 answer = binary_search([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], 19)
 
 if answer != nil
@@ -23,29 +25,16 @@ else
   puts "target not in the list"
 end
 
-def assert_equal(expected, actual)
-  if expected == actual
-    puts "PASS: got #{actual}"
-  else
-    puts "FAIL: expected #{expected.inspect}, but got #{actual.inspect}"
-  end
+answer = binary_search([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], 11)
+
+if answer != nil
+  puts "answer #{answer}"
+else
+  puts "target not in the list"
 end
 
-def binary_search(list, target)
-  r = list.length - 1
-  l = 0
-  while l <= r
-    m = l + (r - l) / 2  
-    if list[m] == target
-      return m
-    elsif list[m] < target
-      l = m + 1 
-    else
-      r = m - 1
-    end
-  end
-  nil
-end
+puts "-----"
+
 
 def assert_equal(description, expected, actual)
   if expected == actual
