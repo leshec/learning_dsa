@@ -19,7 +19,7 @@ puts "-----"
 
 answer = binary_search([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], 19)
 
-if answer != nil
+if answer 
   puts "answer #{answer}"
 else
   puts "target not in the list"
@@ -27,7 +27,7 @@ end
 
 answer = binary_search([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], 11)
 
-if answer != nil
+if answer 
   puts "answer #{answer}"
 else
   puts "target not in the list"
