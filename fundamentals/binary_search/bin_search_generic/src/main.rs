@@ -1,6 +1,5 @@
-//call from the command line with:
-//'cargo run -- 10'
-//'cargo run -- c'
+use std::error::Error;
+
 fn binary_search<T: PartialOrd>(arr: &[T], target: T) -> Option<usize> {
     if arr.is_empty() {
         return None;
@@ -27,33 +26,38 @@ fn recursive_helper<T: PartialOrd>(arr: &[T], target: T, l: usize, r: usize) -> 
     }
 }
 
-fn main() {
-    let needle = std::env::args().nth(1).expect("No argument provided");
+fn main() -> Result<(), Box<dyn Error>> {
+    let args: Vec<String> = std::env::args().collect();
 
-    let num_arr = [-10, -5, -2, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-    let char_arr = ['a', 'b', 'c', 'd', 'e'];
+    if args.len() < 2 {
+        return Err("No argument provided. \n 'cargo run -- d or cargo run -- -5'".into());
+    }
+
+    let needle = &args[1];
+    let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+    let nums = [-10, -5, -2, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+    let report = |res: Option<usize>, target: &dyn std::fmt::Debug| match res {
+        Some(x) => println!("The answer is: {}", x),
+        None => println!("Element {:?} was not found", target),
+    };
 
     match needle.as_str() {
         s if s.parse::<i32>().is_ok() => {
             let target: i32 = s.parse().unwrap();
-            match binary_search(&num_arr, target) {
-                Some(x) => println!("Found number at index: {}", x),
-                None => println!("Number {} not found", target),
-            }
-            println!("For reference: Array {:?} \n Target {:?}", num_arr, target);
+            let index = binary_search(&nums, target);
+            report(index, &target);
+            println!("Ref: {:?} | Needle: {}", nums, target);
         }
 
         s if s.len() == 1 && s.chars().next().unwrap().is_alphabetic() => {
             let letter = s.chars().next().unwrap();
-            match binary_search(&char_arr, letter) {
-                Some(x) => println!("Found letter at index: {}", x),
-                None => println!("Letter '{}' not found", letter),
-            }
-            println!(
-                "For reference: Array {:?} \n Target {:?}",
-                &char_arr, letter
-            );
+            let index = binary_search(&letters, letter);
+            report(index, &letter);
+            println!("Ref: {:?} | Needle: {}", letters, letter);
         }
+
         _ => println!("Invalid or mixed input"),
     }
+    Ok(())
 }
